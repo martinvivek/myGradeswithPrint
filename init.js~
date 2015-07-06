@@ -1,0 +1,24 @@
+$(document).ready( function() { 
+	var textoIzq, textoDer, labelBusqueda , textoBusqueda, enlacePrevious, enlaceNext, infoDiv;
+	var father = document.getElementById("grades_length");
+	var label = father.childNodes[0];
+	//alert(label.childNodes[0].data);
+	textoIzq = label.childNodes[0];
+	textoIzq.replaceData(0,textoIzq.length,"Mostrar");
+	textoDer = label.childNodes[2];
+	textoDer.replaceData(0,textoDer.length,"Cursos");
+	labelBusqueda =document.getElementById("grades_filter").childNodes[0];
+	textoBusqueda = labelBusqueda.childNodes[0];
+	textoBusqueda.replaceData(0,textoBusqueda.length,"Buscar");
+	enlacePrevious = document.getElementById("grades_previous");
+	enlaceNext = document.getElementById("grades_next");
+	enlacePrevious.firstChild.data = "Anterior";
+	enlaceNext.firstChild.data = "Siguiente";
+	infoDiv = document.getElementById("grades_info");//falta corregir el texto de grades_info
+	/*para eso va a haber que dividir el texto en palabras y remplazar
+	Showing 1 to 1 of 1 entries
+	las palabras 1 3 5 y 7
+	*/
+	/*ademas falta agregar a la tabla lo de la fecha de inicio del curso y la exportacion a pdf*/
+}
+);
