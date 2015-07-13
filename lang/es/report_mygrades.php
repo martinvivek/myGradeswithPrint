@@ -33,6 +33,6 @@ $string['gradetblheader_grade'] = 'Calificación';
 $string['gradetblheader_startdate'] = 'Inicio del curso';
 $string['noenrolments'] = 'Este usuario aun no se ha inscripto en ningun curso';
 $string['reportePDF'] = 'Imprimir en PDF';
-$string['PDFTitle'] = 'Reporte de calificaciones para usuario ';
+$string['PDFTitle'] = 'Reporte de inscripciones a cursos ';
 $string['PDFFileTitle']='Calificaciones ';
 

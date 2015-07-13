@@ -42,7 +42,7 @@ function setearCampoForm( tabla ){
 	filas+="<tr>"+tabla[i].innerHTML+"</tr>";
     }
  }
- alert(tabla.length);
+ //alert(tabla.length);
  if(tabla.length!=0){//solo seteo el campo si habia cursos para ese alumno
   hiddenField.setAttribute("value",filas); 
  }

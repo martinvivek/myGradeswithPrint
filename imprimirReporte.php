@@ -15,12 +15,17 @@ function levantarNombre(){
    global $USER;
    return ($USER->firstname.' '.$USER->lastname);
 }
+function sanitasize($toPrint){
 
+$strAux = strip_tags($toPrint,'<td><tr>');
+return $strAux;
+
+}
 
 $titulo= get_string('PDFTitle','report_mygrades');
 $nombre= levantarNombre();
-error_log($nombre);
-$titulo.= $nombre;
+$hoy = date("j/n/Y");//uso la fecha de php porque es mas facil.   
+//var_dump($date);
 $html = '<html><body><h2>No hay cursos seleccionados para el usuario'.$nombre.'</h2></body></html>';
 if(isset($_POST['imprimir'])&&($_POST['imprimir']!='vacio')){
   $html ='<html>
@@ -42,13 +47,13 @@ a{
    color:black;
 }
 table, td, th {
-    border: 1px solid black;
+   /* border: 1px solid black;*/
 }
 tr{
-    background-color: #FFEBCD;
+    /*background-color: #FFEBCD;*/
 }
 .alt{
-   background-color: #DEB887; 
+  /* background-color: #DEB887;*/ 
 }
 td {
     margin-left: 3px;
@@ -59,18 +64,18 @@ td {
     text-align: left;
     padding-top: 5px;
     padding-bottom: 4px;
-    background-color: #FFEBCD;
+   /* background-color: #FFEBCD;*/
     font-size: larger;
     margin-left: 3px;
 }
 </style>
-<body><h2>'.$titulo.'</h2><table>'.
-		'<tr><th style="width: 400px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 105px;">'."Calificaciones".'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.$_POST["imprimir"] .	
-	'</table></body></html>';
+<body><img src="logo_calp.png" alt="logo calp" height="100" width="100"> <h2>'.$titulo.'</h2><h4>Colegio de Abogados de La Plata</h4><p>usuario: '.$nombre .'</p><table>'.
+		'<tr><th style="width: 350px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 105px;">'."Calificaciones".'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.sanitasize($_POST["imprimir"]) .	
+	'</table></br>'.$hoy. '</body></html>';
 }
 
 $dompdf = new DOMPDF();
-$dompdf->load_html($html); 
+$dompdf->load_html(utf8_decode($html)); 
 $dompdf->render();
 $dompdf->stream(get_string('PDFFileTitle','report_mygrades').$nombre.".pdf");
 
