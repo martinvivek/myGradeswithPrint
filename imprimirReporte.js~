@@ -35,21 +35,16 @@ function setearCampoForm( tabla ){
  var filas="";
  var arrayLength = tabla.length;
  for (var i = 0; i < arrayLength; i++) {
-    if(i %2 ==0){
-	filas+= "<tr class='alt'>"+tabla[i].innerHTML+"</tr>";
+     var dataFields= tabla[i].childNodes;
+     alert(dataFields[0].innerHTML);
+    for(var j = 0; j < 3; j++){
+        var aux = document.createElement("input");
+        aux.setAttribute("type", "hidden");
+ 	aux.setAttribute("name", "campo"+(i*3+j));
+        aux.setAttribute("value",dataFields[j].innerHTML); 
+ 	form.appendChild(aux);
     }
-    else{
-	filas+="<tr>"+tabla[i].innerHTML+"</tr>";
-    }
  }
- //alert(tabla.length);
- if(tabla.length!=0){//solo seteo el campo si habia cursos para ese alumno
-  hiddenField.setAttribute("value",filas); 
- }
- else{
-   hiddenField.setAttribute("value","vacio"); 
- }
- form.appendChild(hiddenField);	
 }
 $(document).ready( function() { 
 
