@@ -15,11 +15,12 @@ function levantarNombre(){
    global $USER;
    return ($USER->firstname.' '.$USER->lastname);
 }
+function sec_print($s) {
+    return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
+}
 function sanitasize($toPrint){
-
 $strAux = strip_tags($toPrint,'<td><tr>');
 return $strAux;
-
 }
 
 $titulo= get_string('PDFTitle','report_mygrades');
@@ -42,12 +43,14 @@ table {
     font-size: medium; 
     font-family: verdana;
     font-size: large;
+    margin-bottom: 50px;
 }
 a{
    color:black;
 }
 table, td, th {
    /* border: 1px solid black;*/
+	
 }
 tr{
     /*background-color: #FFEBCD;*/
@@ -69,11 +72,11 @@ td {
     margin-left: 3px;
 }
 </style>
-<body><img src="logo_calp.png" alt="logo calp" height="100" width="100"> <h2>'.$titulo.'</h2><h4>Colegio de Abogados de La Plata</h4><p>usuario: '.$nombre .'</p><table>'.
-		'<tr><th style="width: 350px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 105px;">'."Calificaciones".'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.sanitasize($_POST["imprimir"]) .	
-	'</table></br>'.$hoy. '</body></html>';
+<body><img src="logo_calp.png" alt="logo calp" height="100" width="100"> <h4>Colegio de Abogados de La Plata</h4> <h2>'.$titulo.'</h2> <p>usuario: '.$nombre .'</p><table>'.
+		'<tr><th style="width: 350px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 105px;">'."Calificación".'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.sec_print(sanitasize($_POST["imprimir"])) .	
+	'</table><p> Fecha de emision: '.$hoy. '</body></html>';
 }
-
+//falta corregir lo de imprimir separado para aumentar la seguridad
 $dompdf = new DOMPDF();
 $dompdf->load_html(utf8_decode($html)); 
 $dompdf->render();
