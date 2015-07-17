@@ -62,6 +62,7 @@ table {
     font-family: verdana;
     font-size: large;
     margin-bottom: 50px;
+    text-align: center;
 }
 a{
    color:black;
@@ -82,7 +83,7 @@ td {
 }
  th {
     font-size: 1.1em;
-    text-align: left;
+    text-align: center;
     padding-top: 5px;
     padding-bottom: 4px;
    /* background-color: #FFEBCD;*/
@@ -92,7 +93,7 @@ td {
 </style>
 <body><img src="logo_calp.png" alt="logo calp" height="100" width="100"> <h4>Colegio de Abogados de La Plata</h4> <h2>'.$titulo.'</h2> <p>usuario: '.$nombre .'</p><table>'.
 		'<tr><th style="width: 350px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 105px;">'."Calificación".'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.table_data_rows().	
-	'</table><p> Fecha de emision: '.$hoy. '</body></html>';
+	'</table><p> Fecha de emisión: '.$hoy. '</body></html>';
 }
 
 $dompdf = new DOMPDF();
