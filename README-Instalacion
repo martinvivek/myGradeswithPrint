@@ -1,0 +1,7 @@
+Modulo myGradeswithPrint, pasos de la instalacion:
+
+1.ir a la carpeta de mod y ejecutar: git clone https://github.com/moodlelinti/myGradeswithPrint.git para descargar el modulo, se descargara en una carpeta con el nombre myGradeswithPrint.
+2. renombrar la carpeta al nombre original del modulo: mv myGradeswithPrint mygrades.
+3. acceder a la seccion de notificaciones de moodle y hacer click en "actualizar la base de datos ahora"
+
+Luego de esto cada usuario podra acceder al modulo en  Ajustes de mi perfil-> informes de actividad -> reporte de calificaciones
