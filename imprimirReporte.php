@@ -73,7 +73,7 @@ td {
 </style>
 <body><img src="logo_calp.png" alt="logo calp" height="100" width="100"> <h2>'.$titulo.'</h2><h4>Colegio de Abogados de La Plata</h4><p>Participante: '.$nombre .'</p><table>'.
 		'<tr><th style="width: 350px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.sanitasize($_POST["imprimir"]) .	
-	'</table><p>'.$hoy. '</body></html>';
+	'</table><p>Fecha de emisión: '.$hoy. '</body></html>';
 }
 
 $dompdf = new DOMPDF();
