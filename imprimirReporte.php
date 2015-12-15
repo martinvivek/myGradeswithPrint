@@ -71,8 +71,8 @@ td {
     margin-left: 3px;
 }
 </style>
-<body><img src="logo_calp.png" alt="logo calp" height="100" width="100"> <h2>'.$titulo.'</h2><h4>Colegio de Abogados de La Plata</h4><p>usuario: '.$nombre .'</p><table>'.
-		'<tr><th style="width: 350px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 105px;">'."Calificaciones".'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.sanitasize($_POST["imprimir"]) .	
+<body><img src="logo_calp.png" alt="logo calp" height="100" width="100"> <h2>'.$titulo.'</h2><h4>Colegio de Abogados de La Plata</h4><p>Participante: '.$nombre .'</p><table>'.
+		'<tr><th style="width: 350px;">'.get_string('gradetblheader_course','report_mygrades').'</th><th style="width: 200px;">'.get_string('gradetblheader_startdate','report_mygrades').'</th></tr>'.sanitasize($_POST["imprimir"]) .	
 	'</table><p>'.$hoy. '</body></html>';
 }
 
