@@ -2,6 +2,10 @@ moodle-report_mygrades
 ==================
 
 A Moodle Report that shows all user grades
+This module has been modified to print the reports in pdf files,
+ now follow the documentation of the orignial module. 
+
+
 
 Introduction:
 This report displays a searchable and sortable table with the User's grades per course.
