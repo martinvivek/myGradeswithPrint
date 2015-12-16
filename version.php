@@ -16,15 +16,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * My Grades Report.
- *
- * @package   report_mygrades
- * @author    David Bezemer <david.bezemer@uplearning.nl>
- * @credits   Based on original work block_mygrades by Karen Holland, Mei Jin, Jiajia Chen
+ 
+ *My Grades with Print.
+ * @author   Duilio Ray <duilio.92@gmail.com> 
+ * @credits Based on the work by David Bezemer report_mygrades and the original work block_mygrades by Karen Holland, Mei Jin, Jiajia Chen
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$plugin->version = 2014080402;
+$plugin->version = 20151215;
 $plugin->component = 'report_mygrades';
 $plugin->requires = 2013051400;
 $plugin->release = '1.2 (Build: 2014031200)';
